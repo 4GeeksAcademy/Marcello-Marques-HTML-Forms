@@ -1,0 +1,52 @@
+.back{
+  background-color: black;
+}
+.navbar-brand{
+  margin-left: 15px;
+  font-size: 26px !important;
+
+}
+.navbar-outline {
+border: 1px solid #ced4da;
+border-radius: 5px;
+padding: 15px;
+margin-bottom: 15px;
+}
+.border-outline {
+border: 1px solid #ced4da;
+border-radius: 5px;
+padding: 15px;
+}
+.navbar {
+margin-bottom: 0;
+}
+.custom-container {
+background-color: #fff;
+max-width: 80%;
+margin: 0;
+padding: 0;
+}
+.custom-card {
+background-color: #343a40;
+border: none;
+padding: 15px;
+}
+.we-accept-heading {
+font-size: 18px;
+font-weight: normal;
+margin-bottom: 10px;
+}
+.radio-btn-group .form-check-inline {
+margin-right: 10px;
+display: inline-flex;
+align-items: center;
+}
+.radio-btn-group {
+background-color: darkgray;
+border-radius: 5px;
+padding: 4px;
+display: inline-flex;
+}
+i {
+  padding: 4px;
+}

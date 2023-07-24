@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<title>Payment Form Example</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+<script src="https://kit.fontawesome.com/762238d584.js" crossorigin="anonymous"></script>
+</head>
+<body class="back">
+<div class="container-fluid mt-3 border-outline p-3 custom-container">
+    <nav class="navbar navbar-light bg-light navbar-outline mb-0">
+    <span class="navbar-brand mb-0 h1">Payment form example</span>
+    </nav>
+    <div class="alert alert-danger mt-3" role="alert" style="background-color: lightpink; color: darkred;">
+    Some fields are missing
+    </div>
+    <div class="row mt-3">
+      <div class="col">
+        <label for="cardNumber">Card#</label>
+        <input type="text" class="form-control" id="cardNumber" placeholder="xxxxxxxxxxxxxxxx" oninput="validateNumericInput(this, 16)">
+    </div>
+    
+    <div class="col">
+        <label for="cvcNumber">CVC#</label>
+        <input type="text" class="form-control" id="cvcNumber" placeholder="0000000" oninput="validateNumericInput(this, 3)">
+    </div>
+    
+    <div class="col">        
+        <label for="amount">Amount</label>
+        <div class="input-group">
+            <span class="input-group-text">$</span>
+            <input type="text" class="form-control" id="amount" placeholder="Amount" oninput="validateNumericInput(this)">
+        </div>
+    </div>
+    <div class="row mt-3">
+    <div class="col">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName">
+    </div>
+    <div class="col">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName">
+    </div>
+    </div>
+    <div class="row mt-3">
+    <div class="col">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city">
+    </div>
+    <div class="col">
+        <div class="row align-items-center">
+        <div class="col">
+            <label for="state">State</label>
+            <select class="form-select" id="state">
+            <option selected>Select State</option>
+            <option value="alabama">Alabama</option>
+            <option value="alaska">Alaska</option>
+            <option value="arizona">Arizona</option>
+            <option value="arkansas">Arkansas</option>
+            <option value="california">California</option>
+            <option value="north_carolina">North Carolina</option>
+            <option value="south_carolina">South Carolina</option>
+            <option value="colorado">Colorado</option>
+            <option value="connecticut">Connecticut</option>
+            <option value="north_dakota">North Dakota</option>
+            <option value="south_dakota">South Dakota</option>
+            <option value="delaware">Delaware</option>
+            <option value="florida">Florida</option>
+            <option value="georgia">Georgia</option>
+            <option value="hawaii">Hawaii</option>
+            <option value="idaho">Idaho</option>
+            <option value="illinois">Illinois</option>
+            <option value="indiana">Indiana</option>
+            <option value="iowa">Iowa</option>
+            <option value="kansas">Kansas</option>
+            <option value="kentucky">Kentucky</option>
+            <option value="louisiana">Louisiana</option>
+            <option value="maine">Maine</option>
+            <option value="maryland">Maryland</option>
+            <option value="massachusetts">Massachusetts</option>
+            <option value="michigan">Michigan</option>
+            <option value="minnesota">Minnesota</option>
+            <option value="mississippi">Mississippi</option>
+            <option value="missouri">Missouri</option>
+            <option value="montana">Montana</option>
+            <option value="nebraska">Nebraska</option>
+            <option value="nevada">Nevada</option>
+            <option value="new_hampshire">New Hampshire</option>
+            <option value="new_jersey">New Jersey</option>
+            <option value="new_york">New York</option>
+            <option value="new_mexico">New Mexico</option>
+            <option value="ohio">Ohio</option>
+            <option value="oklahoma">Oklahoma</option>
+            <option value="oregon">Oregon</option>
+            <option value="pennsylvania">Pennsylvania</option>
+            <option value="rhode_island">Rhode Island</option>
+            <option value="tennessee">Tennessee</option>
+            <option value="texas">Texas</option>
+            <option value="utah">Utah</option>
+            <option value="vermont">Vermont</option>
+            <option value="virginia">Virginia</option>
+            <option value="west_virginia">West Virginia</option>
+            <option value="washington">Washington</option>
+            <option value="wisconsin">Wisconsin</option>
+            <option value="wyoming">Wyoming</option>
+            </select>
+        </div>
+        <div class="col">
+            <label for="postalCode">Postal Code</label>
+            <input type="text" class="form-control" id="postalCode">
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="row mt-3">
+    <div class="col">
+        <h5 class="we-accept-heading">We Accept</h5>
+        <div class="radio-btn-group">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="cardType" id="masterCard">
+            <i class="fa-brands fa-cc-mastercard fa-2x"></i>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="cardType" id="visa">
+            <i class="fa-brands fa-cc-visa fa-2x"></i>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="cardType" id="dinersClub">
+            <i class="fa-brands fa-cc-diners-club fa-2x"></i>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="cardType" id="americanExpress">
+            <i class="fa-brands fa-cc-amex fa-2x"></i>
+        </div>
+        </div>
+    </div>
+    <div class="col">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" rows="3"></textarea>
+        <small>Add any notes here.</small>
+    </div>
+    </div>
+    <div class="row mt-3 border-top pt-3">
+    <div class="col text-end">
+        <button type="button" class="btn btn-secondary">Cancel</button>
+        <button type="button" class="btn btn-primary">Send</button>
+    </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function validateNumericInput(inputElement, maxLength) {
+      inputElement.value = inputElement.value.replace(/[^0-9]/g, ''); 
+      if (maxLength && inputElement.value.length > maxLength) {
+          inputElement.value = inputElement.value.slice(0, maxLength);
+      }
+  }
+  </script>
+</body>
+</html>
